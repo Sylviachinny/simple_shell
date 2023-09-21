@@ -76,7 +76,7 @@ int exec(char **arg_es, char **arg, char *buffer, int count)
 		else
 			return (-1);
 	}
-	/*return (status);*/
+	return (status);
 }
 /**
  * handle_path - handles the path
