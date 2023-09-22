@@ -25,7 +25,7 @@ ssize_t _memchr(const void *s, int c, size_t n);
 void *_memcpy(void *dest, const void *src, size_t n);
 void *_memdup(const void *str, size_t n);
 void *_memset(void *dest, unsigned char chr, size_t n);
-static void cnv_to_helper(char **buff, size_t m);
+/*static void cnv_to_helper(char **buff, size_t m);*/
 char *convert_str(size_t n);
 unsigned int my_atoi(char *str);
 char **duplicateStringArray(char **array);

@@ -10,10 +10,11 @@
  */
 unsigned int my_atoi(char *str)
 {
+	size_t len;
 	atoi_t atou;
 
 	atou.num = 0;
-	size_t len = _strlen(str);
+	len = _strlen(str);
 
 	for (atou.iterator = 0; atou.iterator < len; atou.iterator++)
 	{

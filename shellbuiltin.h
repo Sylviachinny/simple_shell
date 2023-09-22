@@ -26,8 +26,8 @@ struct built_in
 {
 	const char *name;
 	builtin_handler built_f;
-	const char *help;
-	const char *dsc;
+	/*const char *help;
+	const char *dsc;*/
 };
 
 const builtin_t *get_builtin(const char *name);

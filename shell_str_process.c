@@ -79,8 +79,10 @@ ssize_t remove_quotes_len(const char *str)
 				if (quote_proc(*str++) & QUOTE_ESCAPE)
 				{
 					if (*str == '\n')
+					{
 						++str, --stateLen;
 						continue;
+					}
 					if (is_double_quote_escape(*str))
 						++str, --stateLen;
 				}

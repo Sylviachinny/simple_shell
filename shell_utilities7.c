@@ -23,11 +23,12 @@ static void cnv_to_helper(char **buff, size_t m)
  */
 char *convert_str(size_t n)
 {
+	size_t temp;
 	error_t error;
 
 	error.len = 1;
 	error.buf = NULL;
-	size_t temp = n;
+	temp = n;
 
 	while (temp /= 10)
 		error.len++;

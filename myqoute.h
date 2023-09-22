@@ -70,6 +70,4 @@ typedef struct dequote dequote_t;
 char *remove_quotes(const char *s);
 ssize_t remove_quotes_len(const char *str);
 
-/*char *dequote(const char *str);*/
-/*size_t dequote_len(const char *str);*/
 #endif /*_MYQUOTE_H_*/
