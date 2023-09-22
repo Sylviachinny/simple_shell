@@ -12,6 +12,7 @@
 command_t *at_the_end(command_t **the_end, const char *cmd)
 {
 	command_t *new_node, *temp;
+
 	if (!the_end)
 		return (NULL);
 	new_node = malloc(sizeof(command_t));
@@ -47,7 +48,8 @@ command_t *at_the_end(command_t **the_end, const char *cmd)
  * @head: A pointer to the head of the linked list.
  *
  * This function iterates through the linked list starting from the head node,
- * frees memory associated with each node, and updates the head pointer to NULL.
+ * frees memory associated with each node,
+ * and updates the head pointer to NULL.
  */
 void free_command_lst(command_t **head)
 {
@@ -66,11 +68,14 @@ void free_command_lst(command_t **head)
 }
 
 /**
- * free_command_btree - Frees memory allocated for a binary tree of cmd_btree_lst.
+ * free_command_btree - Frees memory allocated
+ * for a binary tree of cmd_btree_lst.
  * @headptr: A pointer to the root of the binary tree.
  *
- * This function recursively traverses the binary tree starting from the root node,
- * frees memory associated with each node, and updates the root pointer to NULL.
+ * This function recursively traverses
+ * the binary tree starting from the root node,
+ * frees memory associated with each node,
+ * and updates the root pointer to NULL.
  */
 void free_command_btree(cmd_btree_t **headptr)
 {
@@ -99,6 +104,7 @@ command_t *del_cmd_at_pos(command_t **head, size_t pos)
 	command_t *current = *head;
 	command_t *previous = *head;
 	size_t index_es;
+
 	if (head == NULL || *head == NULL)
 		return (NULL);
 
@@ -120,7 +126,7 @@ command_t *del_cmd_at_pos(command_t **head, size_t pos)
 				return (NULL);
 			previous = previous->link;
 		}
-		current = previous->link; 
+		current = previous->link;
 		previous->link = current->link;
 		free_command_btree(&(current->b_tree));
 		release_mem(&(current->tokens));
@@ -131,19 +137,24 @@ command_t *del_cmd_at_pos(command_t **head, size_t pos)
 }
 
 /**
- * remove_cmd - Removes the first node from a linked list and retrieves its tokens.
+ * remove_cmd - Removes the first node from a linked list
+ * and retrieves its tokens.
  * @head: A pointer to the pointer to the head of the linked list.
  *
- * This function removes the first node from the linked list pointed to by 'head' and
- * retrieves the tokens associated with that node. It also performs memory cleanup
+ * This function removes the first node from the
+ * linked list pointed to by 'head' and
+ * retrieves the tokens associated with that node.
+ * It also performs memory cleanup
  * for the removed node.
  *
- * Return: A pointer to the tokens if successful, NULL if the list is empty or 'head' is NULL.
+ * Return: A pointer to the tokens if successful,
+ * NULL if the list is empty or 'head' is NULL.
  */
 char **remove_cmd(command_t **head)
 {
 	command_t *next_node;
 	char **retrieve_tok;
+
 	if (!(head && *head))
 		return (NULL);
 
