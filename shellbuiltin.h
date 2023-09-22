@@ -32,7 +32,7 @@ struct built_in
 
 const builtin_t *get_builtin(const char *name);
 
-/*int _cd(store_info_t *info);*/
+int _cd(store_info_t *info);
 int _env(store_info_t *info);
 int _exec(store_info_t *info);
 int _exit_s(store_info_t *info);

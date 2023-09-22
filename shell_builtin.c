@@ -12,7 +12,7 @@ const builtin_t *get_builtin(const char *name)
 	const builtin_t *temp = NULL;
 
 	static builtin_t builtins[] = {
-		/*{cd", _cd},*/
+		{"cd", _cd},
 		{"env", _env},
 		{"exec", _exec},
 		{"exit", _exit_s},
