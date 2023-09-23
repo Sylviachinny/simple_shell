@@ -55,7 +55,7 @@ void handle_error(const char *av, size_t linenum, const char *error_m, ...)
 
 	if (error_m)
 		write(STDERR_FILENO, error_m, _strlen(error_m));
-	write(STDERR_FILENO, ": ", 3);
+	write(STDERR_FILENO, ":\n ", 3);
 
 	free(err.linenum_error);
 }
