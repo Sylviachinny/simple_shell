@@ -66,25 +66,29 @@ char **duplicateStringArray(char **array)
 
 	if (!array || !*array)
 		return (NULL);
-	while (array[length++])
-		;
-	arr_dup = malloc(sizeof(*arr_dup) * length);
+
+	while (array[length])
+		length++;
+
+	arr_dup = malloc(sizeof(*arr_dup) * (length + 1));
 	if (arr_dup == NULL)
 		return (NULL);
-	length = 0;
-	while (array[length])
+
+	for (iterator = 0; iterator < length; iterator++)
 	{
-		arr_dup[length] = _strdup(array[length]);
-		if (arr_dup[length] == NULL)
+		arr_dup[iterator] = _strdup(array[iterator]);
+		if (arr_dup[iterator] == NULL)
 		{
-			for (iterator = 0; iterator < length; iterator++)
+			while (iterator > 0)
 			{
-				free_all(1, arr_dup[iterator]);
+				free(arr_dup[--iterator]);
 			}
-			free_all(1, arr_dup);
+			free(arr_dup);
 			return (NULL);
 		}
-		length++;
 	}
+
+	arr_dup[length] = NULL;
 	return (arr_dup);
 }
+

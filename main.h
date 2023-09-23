@@ -27,21 +27,16 @@
 
 extern char **environ;
 
-/*bool read_usr_input(store_info_t *input_info);*/
-/*bool read_input(store_info_t *store_info_t);*/
 bool read_usr_input(store_info_t *input_info);
-/*quote_state _read_input(char **lineptr, int fd);*/
 quote_state process_usr_input(char **line_input, int fd);
 
 
-/******SHELL ERROR FUNCTION*****/
-
 /*******COMMAND EXECUTION FUNCTION*******/
-/*int execute(store_info_t *info);*/
 int exec_init(store_info_t *shell_info);
-/*int _execute(store_info_t *info);*/
 int executeShellCommand(store_info_t *shell_info);
-/*int parse(store_info_t *info);*/
 int command_processor(store_info_t *shell_info);
 void _sigint(int signal __attribute__((unused)));
+
+/*********REMOVE COMMENT FUNCTION*********/
+void filter_comment(command_t *cmd_se);
 #endif /*MAIN_H*/

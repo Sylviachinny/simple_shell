@@ -15,6 +15,7 @@ int command_processor(store_info_t *shell_info)
 
 	while (command)
 	{
+		filter_comment(command);
 		if (!command->tokens)
 		{
 			command = command->link;
