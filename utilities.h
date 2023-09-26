@@ -29,6 +29,7 @@ void *_memset(void *dest, unsigned char chr, size_t n);
 char *convert_str(size_t n);
 unsigned int my_atoi(char *str);
 char **duplicateStringArray(char **array);
+char **merge_arrays(char **array1, char **array2);
 
 /******SHELL MEMORY DEALLOCATION*******/
 void free_all(const unsigned int n, ...);

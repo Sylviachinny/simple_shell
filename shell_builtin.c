@@ -14,6 +14,7 @@ const builtin_t *get_builtin(const char *name)
 	static builtin_t builtins[] = {
 		{"cd", _cd},
 		{"env", _env},
+		{"alias", _alias},
 		{"exec", _exec},
 		{"exit", _exit_s},
 		{"setenv", _setenv},

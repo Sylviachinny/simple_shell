@@ -92,3 +92,43 @@ char **duplicateStringArray(char **array)
 	return (arr_dup);
 }
 
+/**
+ * merge_arrays - Concatenates two arrays of strings into a new array.
+ * @array1: The first array of strings.
+ * @array2: The second array of strings.
+ *
+ * Return: A newly allocated array containing the concatenated strings.
+ *         NULL is returned in case of memory allocation failure.
+ */
+char **merge_arrays(char **array1, char **array2)
+{
+	char **new_arr;
+	size_t arr_len1, arr_len2, new_len = 0;
+
+	if (array1)
+	{
+		for (arr_len1 = 0; array1[arr_len1]; arr_len1++)
+			;
+	}
+	if (array2)
+	{
+		for (arr_len2 = 0; array2[arr_len2]; arr_len2++)
+			;
+	}
+	new_arr = malloc(sizeof(char *) * (arr_len1 + arr_len2 + 1));
+
+	if (new_arr == NULL)
+		return (NULL);
+	if (array1)
+	{
+		for (arr_len1 = 0; array1[arr_len1]; arr_len1++)
+			new_arr[new_len++] = _strdup(array1[arr_len1]);
+	}
+	if (array2)
+	{
+		for (arr_len2 = 0; array2[arr_len2]; arr_len2++)
+			new_arr[new_len++] = _strdup(array2[arr_len2]);
+	}
+	new_arr[new_len] = NULL;
+	return (new_arr);
+}

@@ -19,15 +19,13 @@ typedef int (*builtin_handler)(store_info_t *);
  * struct built_in - builtin command
  * @name: command name
  * @built_f: function to call
- * @help: command usage
- * @dsc: command description
  */
 struct built_in
 {
 	const char *name;
 	builtin_handler built_f;
-	/*const char *help;
-	const char *dsc;*/
+/*	const char *help;*/
+/*	const char *dsc;*/
 };
 
 const builtin_t *get_builtin(const char *name);
@@ -38,6 +36,7 @@ int _exec(store_info_t *info);
 int _exit_s(store_info_t *info);
 int _setenv(store_info_t *info);
 int _unsetenv(store_info_t *info);
+int _alias(store_info_t *info);
 
 /**
  * struct atoi - A custom data structure for parsing integers

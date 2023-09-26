@@ -39,4 +39,8 @@ void _sigint(int signal __attribute__((unused)));
 
 /*********REMOVE COMMENT FUNCTION*********/
 void filter_comment(command_t *cmd_se);
+
+/*********EXPAND ALIAS FUNCTION**********/
+char *expand_alias_value(alias_t *aliasList, char ***tokenPtr);
+void process_aliases(alias_t *aliasList, char ***token_ptr);
 #endif /*MAIN_H*/

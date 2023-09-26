@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 
+#include "shellalias.h"
 #include "cmd.h"
 #include "shellenv.h"
 #include "handlerror.h"
@@ -33,6 +34,7 @@ extern char **environ;
  * @env: environment
  * @path: path
  * @cmd: change mood
+ * @aliases: shell alias
  */
 struct store_info
 {
@@ -52,6 +54,7 @@ struct store_info
 	shell_dict_t *env;
 	directory_t *path;
 	command_t *cmd;
+	alias_t *aliases;
 };
 
 store_info_t *init_prmpt(int ac, char **av);

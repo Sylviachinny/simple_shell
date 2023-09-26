@@ -54,6 +54,6 @@ int release_store_infomation(store_info_t *store_info)
 	free_dictionary(&store_info->env);
 	free_dir(&store_info->path);
 	free_command_lst(&store_info->cmd);
+	free_dictionary(&store_info->aliases);
 	return (store_info->status);
 }
-

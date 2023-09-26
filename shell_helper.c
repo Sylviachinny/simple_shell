@@ -22,7 +22,7 @@ bool read_usr_input(store_info_t *input_info)
 		line = str_concat(NULL, "", temp, input_info->line);
 		free_all(2, temp, input_info->line);
 		if (input_info->interactive)
-			write(STDIN_FILENO, "> ", 2);
+			write(STDIN_FILENO, "shell$ ", 7);
 		input_info->line_read += 1;
 	}
 
@@ -160,4 +160,3 @@ int executeShellCommand(store_info_t *shell_info)
 
 	return (shell_info->status);
 }
-
